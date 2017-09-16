@@ -145,3 +145,15 @@ after this
 ## Search for conflicts in dir
 * grep -H -r "<<<<<<< HEAD" /path/to/project/dir
 
+## install Nginx
+
+* wget http://nginx.org/keys/nginx_signing.key
+* sudo apt-key add nginx_signing.key
+* sudo nano /etc/apt/sources.list
+   
+post it inside
+
+    deb http://nginx.org/packages/ubuntu/ xenial nginx // Xential is distrubiotion codename
+    deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+* sudo apt-get update
+* sudo apt-get install nginx
