@@ -13,6 +13,7 @@ alias checkConfliect='grep -H -r "<<<<<<< HEAD"'
 
 
 
+
 # Directory
 alias diskusage="df -h"
 alias folderusage="du -ch"
@@ -22,3 +23,7 @@ alias totalfolderusage="du -sh"
 alias opencustomaliases="code  ~/.Jbash"
 alias updatecustomaliases="source ~/.Jbash"
 alias updatethenupgrade="sudo apt-get update && sudo apt-get upgrade"
+
+# Misc
+
+alias checkCopy='watch grep -e Dirty: -e Writeback: /proc/meminfo'
