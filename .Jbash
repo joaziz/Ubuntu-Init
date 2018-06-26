@@ -27,3 +27,18 @@ alias updatethenupgrade="sudo apt-get update && sudo apt-get upgrade"
 # Misc
 
 alias checkCopy='watch grep -e Dirty: -e Writeback: /proc/meminfo'
+
+
+alias winscp="cd /Files/winscp && wine WinSCP.exe && cd -"
+
+
+yus(){
+
+
+echo $1 > url
+youtube-dl -i $1
+
+
+
+
+}
