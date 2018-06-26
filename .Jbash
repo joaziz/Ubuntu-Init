@@ -7,7 +7,7 @@ alias gs="git status"
 alias gd="git add ."
 
 alias gp="git push origin master"
-
+alias checkConfliect='grep -H -r "<<<<<<< HEAD"'
 
 
 
