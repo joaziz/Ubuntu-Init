@@ -42,3 +42,46 @@ youtube-dl -i $1
 
 
 }
+
+
+alias ph7="php7.2"
+alias ph5="php5.6"
+alias act_php_7="sudo a2dismod php5.6 && sudo a2enmod php7.2 && sudo service apache2 restart"
+alias act_php_5="sudo a2dismod php7.2 && sudo a2enmod php5.6 && sudo service apache2 restart"
+alias res_apach="sudo service apache2 restart"
+alias res_mysql="sudo service mysql restart"
+alias edit_JBash="sudo gedit ~/.JBash"
+alias apach_err="sudo gedit /var/log/apache2/error.log"
+alias com7="ph7 /usr/local/bin/composer"
+alias com5="ph5 /usr/local/bin/composer"
+alias chm_open="sudo chmod -R 777 "
+alias ed="sudo gedit "
+
+
+
+
+
+
+create_v_host (){
+
+sudo -- sh -c -e "echo '127.0.0.1	${1}' >> /etc/hosts";
+
+
+sudo -- sh -c -e "echo '<VirtualHost *:80>
+      ServerName ${1}
+      DocumentRoot ${2}
+      ErrorLog ${APACHE_LOG_DIR}/error.log
+	    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    
+        <Directory ${2}>
+          AllowOverride All
+          Require all granted
+      </Directory>
+</VirtualHost>' >> /etc/apache2/sites-available/${1}.conf";
+
+
+sudo a2ensite $1
+
+sudo service apache2 restart
+
+}
