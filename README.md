@@ -157,3 +157,6 @@ post it inside
     deb-src http://nginx.org/packages/ubuntu/ xenial nginx
 * sudo apt-get update
 * sudo apt-get install nginx
+
+## Compres Videos 
+* ffmpeg -i videoS1.mp4 -r 30 -s 960x540 videoS1_test.mp4
